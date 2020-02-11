@@ -1,5 +1,7 @@
 <?php
-  $conn = mysqli_connect("localhost", "root", null, "lesson_03");
+   // Our database connection
+   include('./.env.php');
+   $conn = mysqli_connect(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASS'), getenv('DB'));
 
   $result = mysqli_query($conn, "SELECT * FROM products");
 
